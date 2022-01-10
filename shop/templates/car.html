@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Car Detail {% endblock %}
+
+					{% block header %}
+
+					<!-- Header -->
+					<header id="header">
+						<h1><a href="{% url 'index' %}">Rides Shop</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+					{% endblock %}
+
+					{% block content %} 
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>{{ car.title|upper }}</h2>
+								<p>Phasellus non pulvinar erat. Fusce tincidunt nisl eget ipsum.</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">						
+                                <div class="inner">
+                                    <h2 class="major">Detailed information</h2>
+                                    <p>{{ car.description }}</p>
+                                        <img src="{{ car.image.url }}" alt="" width="80%"/>
+                                        <hr>
+					<h3>Manufacturer: {{ car.producer }}</h3>
+                                        <h3>Country of origin: {{ car.country_of_origin }}</h3>
+                                        <h3>Production year: {{ car.production_year }}</h3>
+                                        <h3>Electric engine: {{ car.electric|yesno }}</h3>
+                                        <h3>First owner: {{ car.first_owner|yesno }}</h3>
+                                        <h3>Colour: {{ car.colour }}</h3>
+                                        <h3>Number of doors: {{ car.number_of_doors }}</h3>
+                                        <h3>Price: {{ car.price }} $</h3>
+                                </div>
+                            </div>
+
+					</section>
+			</div>
+
+			{% endblock %}
+

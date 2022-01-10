@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Racing {% endblock %}
+
+					{% block header %}
+
+					<!-- Header -->
+					<header id="header">
+						<h1><a href="{% url 'index' %}">Rides Shop</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+                    
+
+					{% endblock %}
+
+					{% block content %} 
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+				<!-- Wrapper -->
+					<section id="wrapper">
+                        <section id="banner">
+                            <div class="inner">
+                                <div class="logo"><span class="icon fa-gem"></span></div>
+                                <h2>Rides Shop will take you there...</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsa quas quia aspernatur saepe debitis voluptas aut sunt quae velit.</p>
+                            </div>
+                        </section>
+                        <div class="wrapper">						
+                            <div class="inner">
+                                <h2 class="major">Learn more about our project</h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora sequi praesentium atque expedita nobis voluptate assumenda distinctio. Quidem, provident impedit?</p>
+                                    <img src="{% static 'images/racing.jpg' %}" alt="" width="90%"/>
+
+                        <div class="row">
+                            <div class="col-6 col-12-medium">
+                                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, eveniet.</h3>
+                                <ul>
+                                    <li>Dolor pulvinar etiam.</li>
+                                    <li>Sagittis adipiscing.</li>
+                                    <li>Felis enim feugiat.</li>
+                                    <li>Dolor pulvinar etiam.</li>
+                                    <li>Sagittis adipiscing.</li>
+                                    <li>Felis enim feugiat.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        {% for category in menu_categories %}
+                        {% if category.title == 'racing' %}
+                        <a href="{% url 'category' category.slug %}" class="special" >View offers</a>
+                        {% endif %}
+                        {% endfor %}
+                        </div>
+                        </div>
+
+					</section>
+			</div>
+
+			{% endblock %}

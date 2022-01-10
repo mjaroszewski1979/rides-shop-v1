@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Vintage {% endblock %}
+
+					{% block header %}
+
+					<!-- Header -->
+					<header id="header">
+						<h1><a href="{% url 'index' %}">Rides Shop</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+					{% endblock %}
+
+					{% block content %} 
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+				<!-- Wrapper -->
+					<section id="wrapper">
+                        <section id="banner">
+                            <div class="inner">
+                                <div class="logo"><span class="icon fa-gem"></span></div>
+                                <h2>Rides Shop will take you there...</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsa quas quia aspernatur saepe debitis voluptas aut sunt quae velit.</p>
+                            </div>
+                        </section>
+                        <div class="wrapper">						
+                            <div class="inner">
+                                <h2 class="major">Learn more about our project</h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora sequi praesentium atque expedita nobis voluptate assumenda distinctio. Quidem, provident impedit?</p>
+                                    <img src="{% static 'images/vintage.jpg' %}" alt="" width="90%"/>
+                        <div class="row">
+                            <div class="col-6 col-12-medium">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur necessitatibus soluta accusamus iure odit, expedita quibusdam nemo culpa eius alias.</p>
+                                <hr>
+                                <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+                            </div>
+                        </div>
+                        {% for category in menu_categories %}
+                        {% if category.title == 'vintage' %}
+                        <a href="{% url 'category' category.slug %}" class="special" >View offers</a>
+                        {% endif %}
+                        {% endfor %}
+                        </div>
+                        </div>
+
+					</section>
+			</div>
+
+			{% endblock %}
