@@ -14,10 +14,22 @@
 * Storing app’s secure credentials in environment variables
 * Using django-filter which allows users to filter down a queryset based on a model’s fields and displaying the form to let them do this
 * Implementing the paginator class - it takes in a queryset (such as a Django model) and splits it into Page objects that are then displayed across these pages while still using     the same HTML document
+* Utilizing setUp method to handle especially expensive setup operations for all of the tests within a module
+* Performing extensive selenium tests using 'page object pattern' instead of making raw WebDriver calls to have cleaner code:
+  * Utilizing DRY (Don’t repeat yourself) principle to minimize code duplication by having all ID-locators in one place
+  * Setting an interface between web page’s elements and tests
+  * Avoiding usage of WebDriver APIs in test methods
+  * Encapsulating the services of web pages, not only exposing their elements
 
 --------------------------------------------------
 
 ### Code Coverage:
+* Selenium and unit tests combined
+
+```
+coverage run -p manage.py test unit_tests && coverage run -p manage.py test selenium_tests && coverage combine && coverage html
+
+```
 
 <img src="https://github.com/mjaroszewski1979/rides-shop-v1/blob/main/cov_report.png">
 
