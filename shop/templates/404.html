@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Page not found {% endblock %}
+
+					{% block header %}
+
+					<!-- Header -->
+					<header id="header">
+						<h1><a href="{% url 'index' %}">Rides Shop</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+					{% endblock %}
+
+					{% block content %} 
+                    <div id="page-wrapper">
+                        <!-- Wrapper -->
+                            <section id="wrapper">
+                                <section id="banner">
+                                    <div class="inner">
+                                        <div class="logo"><span class="icon fa-gem"></span></div>
+                                        <h3>Sorry, we can’t find the website you were looking for.</h3>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ipsa quas quia aspernatur saepe debitis voluptas aut sunt quae velit.</p>
+                                    </div>
+                                </section>
+        
+                            </section>
+                    </div>
+                    {% endblock %}

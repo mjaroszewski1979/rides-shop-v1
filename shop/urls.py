@@ -13,3 +13,6 @@ urlpatterns = [
     path('car/<slug:car_slug>/', views.car, name='car'),
     path('category/<slug:category_slug>/', views.category, name='category'),
 ]
+
+handler404 ='shop.views.page_not_found'
+handler500 ='shop.views.server_error'

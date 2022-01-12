@@ -134,6 +134,11 @@ class ShopTest(TestCase):
         self.assertContains(response, 'Rides Shop |  Cars', status_code=200)
         self.assertTrue(b'<a href="/car/ferrari/" class="image">' in response.content)
 
+    def test_handler404(self):
+        response = self.client.get('/some_url/')
+        self.assertContains(response, 'Rides Shop |  Page not found', status_code=404)
+        self.assertTemplateUsed(response, '404.html')
+
     def test_car_model(self):
         car_obj = Car(
         category = self.new_category,

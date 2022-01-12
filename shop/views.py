@@ -53,4 +53,10 @@ def category(request, category_slug):
     page_obj = paginator.get_page(page_number)
     return render(request, 'category.html', {'page_obj': page_obj})
 
+def page_not_found(response, exception):
+    return render(response, '404.html')
+
+def server_error(response):
+    return render(response, '500.html')
+
 
