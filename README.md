@@ -17,6 +17,12 @@
 
 --------------------------------------------------
 
+### Code Coverage:
+
+<img src="https://github.com/mjaroszewski1979/rides-shop-v1/blob/main/cov_report.png">
+
+------------------------------------------------
+
 ![caption](https://github.com/mjaroszewski1979/rides-shop-v1/blob/main/rides_mockup.png)
   
   Live | Code | Docker | Technologies
