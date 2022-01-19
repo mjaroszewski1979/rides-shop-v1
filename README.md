@@ -35,6 +35,23 @@ coverage run -p manage.py test unit_tests && coverage run -p manage.py test sele
 
 ------------------------------------------------
 
+### Docker info:
+* Pull an image from my Docker Hub - click on the icon below
+* Create and start a container 
+* Pass environment variables to your container
+  * with the -e flag or using .env file
+
+```
+docker run -p 8000:8000 -e SECRET_KEY="<your secret key>"  <imagename>
+
+```
+```
+docker run -p 8000:8000 --env-file .env <imagename>
+
+```
+
+--------------------------------------------------
+
 ![caption](https://github.com/mjaroszewski1979/rides-shop-v1/blob/main/rides_mockup.png)
   
   Live | Code | Docker | Technologies
